@@ -1,0 +1,84 @@
+name: BetterHomes
+version: 1.0.0
+main: net.onehype.VitTheo.BetterHomes.BetterHomes
+author: Vit Theo
+description: Better Homes - complete homes management plugin.
+website: https://onehype.net
+
+commands:
+  sethome:
+    description: Define a home at your current location.
+    usage: /sethome [name]
+    aliases: [createhome]
+  home:
+    description: Teleport to one of your homes or to an accessible home.
+    usage: /home [name|player:name]
+    aliases: [gohome]
+  delhome:
+    description: Delete one of your homes.
+    usage: /delhome [name] [confirm]
+    aliases: [deletehome, removehome]
+  homes:
+    description: List your homes and open the homes menu.
+    usage: /homes [page]
+    aliases: [homelist]
+  betterhomes:
+    description: Better Homes administration command.
+    usage: /betterhomes <reload|info|sethomeplayer|delhomeplayer|listhomes|clearhomes|givehome>
+    aliases: [bh, bhomes]
+
+permissions:
+  betterhomes.use:
+    description: Allows using Better Homes basic features.
+    default: true
+  betterhomes.sethome:
+    description: Allows /sethome.
+    default: true
+  betterhomes.home:
+    description: Allows /home.
+    default: true
+  betterhomes.delhome:
+    description: Allows /delhome.
+    default: true
+  betterhomes.gui:
+    description: Allows opening and using the homes GUI.
+    default: true
+  betterhomes.bypass.cooldown:
+    description: Bypasses teleport cooldown.
+    default: op
+  betterhomes.bypass.limit:
+    description: Bypasses home limits.
+    default: op
+  betterhomes.admin:
+    description: Grants all Better Homes administrator permissions.
+    default: op
+    children:
+      betterhomes.reload: true
+      betterhomes.others: true
+      betterhomes.list: true
+      betterhomes.rename: true
+      betterhomes.teleport.instant: true
+      betterhomes.teleport.safely: true
+      betterhomes.bypass.cooldown: true
+      betterhomes.bypass.limit: true
+  betterhomes.reload:
+    description: Allows /betterhomes reload.
+    default: op
+  betterhomes.others:
+    description: Allows managing and teleporting to other players' homes.
+    default: op
+  betterhomes.rename:
+    description: Allows renaming homes.
+    default: true
+  betterhomes.list:
+    description: Allows listing homes in chat.
+    default: true
+  betterhomes.teleport.instant:
+    description: Bypasses teleport delay.
+    default: op
+  betterhomes.teleport.safely:
+    description: Allows safe teleport adjustment.
+    default: true
+  betterhomes.world.*:
+    description: Allows homes in every world when world permission checks are enabled.
+    default: op

@@ -1,0 +1,60 @@
+prefix: "&8[&aBetter Homes&8] &7"
+
+general:
+  no-permission: "%prefix%&cYou do not have permission."
+  player-only: "%prefix%&cThis command can only be used by a player."
+  unknown-player: "%prefix%&cPlayer not found: &f%player%&c."
+  reload: "%prefix%&aConfiguration and messages reloaded."
+  usage: "%prefix%&cUsage: &f%usage%"
+  error: "%prefix%&cAn unexpected error occurred. Please check the console."
+
+homes:
+  created: "%prefix%&aHome &f%home% &acreated."
+  updated: "%prefix%&aHome &f%home% &aupdated."
+  deleted: "%prefix%&aHome &f%home% &adeleted."
+  moved: "%prefix%&aHome &f%home% &amoved to your current location."
+  renamed: "%prefix%&aHome &f%old% &arenamed to &f%new%&a."
+  not-found: "%prefix%&cHome &f%home% &cdoes not exist."
+  no-homes: "%prefix%&cYou do not have any homes."
+  no-access: "%prefix%&cYou cannot access this home."
+  limit-reached: "%prefix%&cYou reached your home limit: &f%limit%&c."
+  invalid-name: "%prefix%&cInvalid home name. Allowed: &f%allowed%&c."
+  name-too-long: "%prefix%&cHome name is too long. Maximum: &f%max%&c characters."
+  already-exists: "%prefix%&cHome &f%home% &calready exists."
+  overwrite-denied: "%prefix%&cYou cannot overwrite this home."
+  delete-confirm: "%prefix%&eRun &f/delhome %home% confirm &eto confirm deletion."
+  cleared: "%prefix%&aHomes cleared for &f%player%&a."
+  list-header: "%prefix%&aHomes of &f%player% &7(page %page%/%pages%):"
+  list-entry: "&8- &f%home% &7(%world%, %x%, %y%, %z%)"
+  list-footer: "%prefix%&7Use &f/homes <page> &7to browse."
+  public-enabled: "%prefix%&aHome &f%home% &ais now public."
+  public-disabled: "%prefix%&eHome &f%home% &eis now private."
+  shared: "%prefix%&aHome &f%home% &ashared with &f%player%&a."
+  unshared: "%prefix%&eHome &f%home% &eis no longer shared with &f%player%&e."
+
+teleport:
+  starting: "%prefix%&eTeleporting to &f%home% &ein &f%seconds% &eseconds. Do not move."
+  success: "%prefix%&aTeleported to &f%home%&a."
+  cancelled-move: "%prefix%&cTeleport cancelled because you moved."
+  cancelled-damage: "%prefix%&cTeleport cancelled because you took damage."
+  cancelled-combat: "%prefix%&cTeleport cancelled because you entered combat."
+  cooldown: "%prefix%&cPlease wait &f%seconds% &cseconds before teleporting again."
+  unsafe: "%prefix%&cThis home is unsafe and no safe nearby location was found."
+  world-blocked: "%prefix%&cHomes are disabled in world &f%world%&c."
+  world-permission: "%prefix%&cYou cannot use homes in world &f%world%&c."
+  world-missing: "%prefix%&cWorld &f%world% &cis not loaded."
+
+gui:
+  disabled: "%prefix%&cThe homes GUI is disabled."
+  rename-prompt: "%prefix%&eType the new home name in chat, or &fcancel &eto abort."
+  create-prompt: "%prefix%&eType the new home name in chat, or &fcancel &eto abort."
+  prompt-cancelled: "%prefix%&cAction cancelled."
+
+admin:
+  info:
+    - "&8&m--------------------------------"
+    - "&aBetter Homes &7v%version%"
+    - "&7Author: &fVit Theo"
+    - "&7Loaded players: &f%players%"
+    - "&7Loaded homes: &f%homes%"
+    - "&8&m--------------------------------"

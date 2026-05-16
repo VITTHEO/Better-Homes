@@ -1,0 +1,197 @@
+# Better Homes by Vit Theo
+# Main configuration file.
+
+storage:
+  # yaml is the default and currently implemented storage backend.
+  # The code is structured around a HomeStorage interface so SQLite/MySQL can be added cleanly.
+  type: yaml
+  file: homes.yml
+  auto-save-minutes: 5
+
+homes:
+  default-name: home
+  default-limit: 5
+  # Optional permissions: betterhomes.limit.<number>, for example betterhomes.limit.10
+  use-limit-permission: true
+  allow-overwrite: false
+  allow-overwrite-with-permission: betterhomes.sethome.overwrite
+  per-world-homes: false
+  max-name-length: 24
+  name-regex: "^[A-Za-z0-9_-]+$"
+  allowed-name-characters-message: "A-Z, a-z, 0-9, _ and -"
+
+listing:
+  # chat, gui, or both
+  mode: both
+  entries-per-chat-page: 8
+
+worlds:
+  # none, whitelist, or blacklist
+  mode: none
+  list: []
+  require-permission: false
+  permission-template: "betterhomes.world.%world%"
+
+teleport:
+  delay-seconds: 5
+  cooldown-seconds: 20
+  cancel-on-move: true
+  cancel-on-damage: true
+  cancel-on-combat: true
+  combat-tag-seconds: 12
+  center-on-block: true
+  safe-teleport: true
+  search-radius-horizontal: 4
+  search-radius-vertical: 5
+  warmup-title: true
+
+shared-homes:
+  enabled: true
+  public-enabled: true
+  allow-owner-share-command: true
+  allow-owner-public-toggle: true
+
+commands:
+  home-without-name-uses-first-if-only-one: true
+  delhome-requires-confirmation: true
+  homes-command-opens-gui: true
+  homes-command-shows-chat-list: true
+
+gui:
+  enabled: true
+  rows: 6
+  title-main: "&8Better Homes &7- &fPage %page%"
+  title-pages: "&8Better Homes &7- &fPages"
+  title-edit: "&8Home: &f%home%"
+  title-confirm-delete: "&cDelete &f%home%?"
+  fill-empty-slots: true
+  filler:
+    material: "STAINED_GLASS_PANE:7,GRAY_STAINED_GLASS_PANE"
+    name: " "
+  home-slots:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+  buttons:
+    home:
+      material: "BED"
+      name: "&a%home%"
+      lore:
+        - "&7World: &f%world%"
+        - "&7X: &f%x% &7Y: &f%y% &7Z: &f%z%"
+        - ""
+        - "&eLeft-click &7to teleport"
+        - "&eRight-click &7to edit"
+        - "&eShift-right-click &7to delete"
+    previous:
+      slot: 45
+      material: "ARROW"
+      name: "&ePrevious page"
+      lore: []
+    next:
+      slot: 53
+      material: "ARROW"
+      name: "&eNext page"
+      lore: []
+    pages:
+      slot: 48
+      material: "BOOK"
+      name: "&bPage selector"
+      lore: []
+    create:
+      slot: 49
+      material: "EMERALD"
+      name: "&aCreate a home"
+      lore:
+        - "&7Type the name in chat."
+    close:
+      slot: 50
+      material: "BARRIER"
+      name: "&cClose"
+      lore: []
+    back:
+      slot: 45
+      material: "ARROW"
+      name: "&eBack"
+      lore: []
+    teleport:
+      slot: 20
+      material: "ENDER_PEARL"
+      name: "&aTeleport"
+      lore: []
+    move:
+      slot: 22
+      material: "COMPASS"
+      name: "&6Move here"
+      lore:
+        - "&7Updates this home to your position."
+    rename:
+      slot: 24
+      material: "NAME_TAG"
+      name: "&bRename"
+      lore:
+        - "&7Type the new name in chat."
+    public:
+      slot: 30
+      material: "EYE_OF_ENDER"
+      name: "&dPublic: &f%state%"
+      lore:
+        - "&7Toggle public access."
+    delete:
+      slot: 32
+      material: "TNT"
+      name: "&cDelete"
+      lore:
+        - "&7Requires confirmation."
+    confirm:
+      slot: 21
+      material: "WOOL:5,LIME_WOOL"
+      name: "&aConfirm"
+      lore: []
+    cancel:
+      slot: 23
+      material: "WOOL:14,RED_WOOL"
+      name: "&cCancel"
+      lore: []
+    page:
+      material: "PAPER"
+      name: "&bPage %page%"
+      lore:
+        - "&7Click to open."
+
+sounds:
+  enabled: true
+  open: "CHEST_OPEN,BLOCK_CHEST_OPEN"
+  click: "CLICK,UI_BUTTON_CLICK"
+  success: "LEVEL_UP,ENTITY_PLAYER_LEVELUP"
+  error: "VILLAGER_NO,ENTITY_VILLAGER_NO"
+  teleport: "ENDERMAN_TELEPORT,ENTITY_ENDERMAN_TELEPORT"
+
+effects:
+  enabled: true
+  teleport: "ENDER_SIGNAL"
